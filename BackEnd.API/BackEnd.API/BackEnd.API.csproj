@@ -12,7 +12,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Shared\Domain\Services\Communication" />
       <Folder Include="Shared\Extensions" />
       <Folder Include="Shared\Persistence" />
     </ItemGroup>
