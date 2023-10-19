@@ -7,8 +7,14 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.7"/>
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0"/>
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.7" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Shared\Domain\Services\Communication" />
+      <Folder Include="Shared\Extensions" />
+      <Folder Include="Shared\Persistence" />
     </ItemGroup>
 
 </Project>
