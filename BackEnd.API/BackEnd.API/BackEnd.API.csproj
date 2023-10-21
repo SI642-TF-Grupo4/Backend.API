@@ -12,6 +12,21 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="Credit" />
+      <Folder Include="PaymentPlan" />
+      <Folder Include="Security\Authorization\Attributes" />
+      <Folder Include="Security\Authorization\Handlers\Implementations" />
+      <Folder Include="Security\Authorization\Handlers\Interfaces" />
+      <Folder Include="Security\Authorization\Middleware" />
+      <Folder Include="Security\Domain\Models" />
+      <Folder Include="Security\Domain\Repositories" />
+      <Folder Include="Security\Domain\Services\Communication" />
+      <Folder Include="Security\Exceptions" />
+      <Folder Include="Security\Interfaces\Rest\Controllers" />
+      <Folder Include="Security\Mapping" />
+      <Folder Include="Security\Persistence\Repositories" />
+      <Folder Include="Security\Resources" />
+      <Folder Include="Security\Services" />
       <Folder Include="Shared\Persistence" />
     </ItemGroup>
 
