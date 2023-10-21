@@ -19,7 +19,6 @@
       <Folder Include="Security\Authorization\Handlers\Interfaces" />
       <Folder Include="Security\Authorization\Middleware" />
       <Folder Include="Security\Domain\Repositories" />
-      <Folder Include="Security\Domain\Services\Communication" />
       <Folder Include="Security\Exceptions" />
       <Folder Include="Security\Interfaces\Rest\Controllers" />
       <Folder Include="Security\Mapping" />
