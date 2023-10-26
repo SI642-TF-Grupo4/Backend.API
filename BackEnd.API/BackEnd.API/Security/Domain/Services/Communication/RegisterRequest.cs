@@ -5,10 +5,10 @@ namespace BackEnd.API.Security.Domain.Services.Communication;
 public class RegisterRequest
 {
     [Required]
-    public string Name { get; set; }
+    public string Nombre { get; set; }
     
     [Required]
-    public string LastName { get; set; }
+    public string Apellido { get; set; }
     
     [Required]
     [MinLength(9, ErrorMessage = "DNI can only have 9 digits.")]
@@ -20,7 +20,7 @@ public class RegisterRequest
     public string Email { get; set; }
     
     [Required]
-    public string Phone { get; set; }
+    public string Telefono { get; set; }
     
     [Required]
     //Pendiente si se quiere confirmación de password
