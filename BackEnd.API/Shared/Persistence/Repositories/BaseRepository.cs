@@ -4,10 +4,10 @@ namespace BackEnd.API.Shared.Persistence.Repositories;
 
 public class BaseRepository
 {
-    protected readonly AppDbContext Context;
+    protected readonly AppDbContext _context;
 
     public BaseRepository(AppDbContext context)
     {
-        Context = context;
+        _context = context;
     }
 }

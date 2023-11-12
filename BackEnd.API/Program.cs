@@ -1,3 +1,7 @@
+using BackEnd.API.Credit.Domain.Repositories;
+using BackEnd.API.Credit.Domain.Services;
+using BackEnd.API.Credit.Persistence.Repositories;
+using BackEnd.API.Credit.Services;
 using BackEnd.API.Security.Authorization.Handlers.Implementations;
 using BackEnd.API.Security.Authorization.Handlers.Interfaces;
 using BackEnd.API.Security.Authorization.Settings;
@@ -61,13 +65,20 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 // Authentication Bounded Context Injection Configuration
 builder.Services.AddScoped<IJwtHandler, JwtHandler>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IVehicleService, VehicleService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IVehicleRepository, VehicleRepository>();
 builder.Services.AddScoped<IPasswordHashingService, PasswordHashingService>();
 
 // AutoMapper Configuration
 builder.Services.AddAutoMapper(
     typeof(ModelToResourceProfile),
     typeof(ResourceToModelProfile)
+);
+
+builder.Services.AddAutoMapper(
+    typeof(BackEnd.API.Credit.Mapping.ModelToResourceProfile),
+    typeof(BackEnd.API.Credit.Mapping.ResourceToModelProfile)
 );
 
 var app = builder.Build();
