@@ -14,31 +14,34 @@ public class UserRepository: BaseRepository, IUserRepository
 
     public async Task<IEnumerable<User>> ListAsync()
     {
-        return await Context.Users.ToListAsync();
+        return await _context.Users
+            .ToListAsync();
     }
 
     public async Task AddAsync(User user)
     {
-        await Context.Users.AddAsync(user);
+        await _context.Users.AddAsync(user);
     }
 
     public async Task<User> FindByIdAsync(int id)
     {
-        return await Context.Users.FindAsync(id);
+        return await _context.Users
+            .FirstOrDefaultAsync(u => u.Id == id);
     }
 
     public async Task<User> FindByEmailAsync(string email)
     {
-        return await Context.Users.SingleOrDefaultAsync(user => user.Email == email);
+        return await _context.Users
+            .FirstOrDefaultAsync(user => user.Email == email);
     }
 
     public void Update(User user)
     {
-        Context.Users.Update(user);
+        _context.Users.Update(user);
     }
 
     public void Remove(User user)
     {
-        Context.Users.Remove(user);
+        _context.Users.Remove(user);
     }
 }
