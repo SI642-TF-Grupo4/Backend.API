@@ -8,5 +8,7 @@ public interface ICreditRepository
 
     Task<Credito> FindByUserId(int userId);
 
+    Task<Credito> FindById(int id);
+
     void Remove(Credito credito);
 }

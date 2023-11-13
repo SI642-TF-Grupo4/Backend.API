@@ -15,16 +15,25 @@ public class Credito
     public int PeriodosGraciaTotal { get; set; }
     public int PeriodosGraciaParcial { get; set; }
     public double TasaSeguroDesgravamen { get; set; }
-    public double MontoSeguroDesgravamen { get; set; }
     public double TasaInteresMoratorio { get; set; }
     public double ComisionEnvioFisico { get; set; }
     public double TasaSeguroVehicular { get; set; }
-    public double MontoSeguroVehicular { get; set; }
     public DateTime FechaPrimeraCuota { get; set; }
     public DateTime FechaDesembolso { get; set; }
     public double OtrosGastos { get; set; }
     public double OtrasComisiones { get; set; }
+    public double Tir { get; set; }
+    public double Tcea { get; set; }
+    public double CuotaMensual { get; set; }
+    public double UltimaCuota { get; set; }
     public int UserId { get; set; }
     public User User;
+
+    public Credito()
+    {
+        PlanDePago = new List<Cuota>();
+    }
+
+    public List<Cuota> PlanDePago { get; set; }
 
 }

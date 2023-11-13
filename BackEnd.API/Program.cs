@@ -64,10 +64,17 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 // Authentication Bounded Context Injection Configuration
 builder.Services.AddScoped<IJwtHandler, JwtHandler>();
+
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IVehicleService, VehicleService>();
+builder.Services.AddScoped<ICreditoService, CreditService>();
+builder.Services.AddScoped<ICuotaService, CuotaService>();
+
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<ICreditRepository, CreditRepository>();
 builder.Services.AddScoped<IVehicleRepository, VehicleRepository>();
+builder.Services.AddScoped<ICuotaRepository, CuotaRepository>();
+
 builder.Services.AddScoped<IPasswordHashingService, PasswordHashingService>();
 
 // AutoMapper Configuration

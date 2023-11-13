@@ -9,7 +9,9 @@ public class ModelToResourceProfile : Profile
     public ModelToResourceProfile()
     {
         CreateMap<Vehicle, VehicleResource>();
-        
-        
+
+        CreateMap<Credito, CreditoResource>();
+
+        CreateMap<Cuota, CuotaResource>();
     }
 }

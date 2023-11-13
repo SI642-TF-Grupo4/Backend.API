@@ -8,7 +8,7 @@ public interface ICreditoService
 {
     Task<CreditoResponse> SaveAsync(Credito credito);
 
-    Task<CreditoResponse> FindByUserId(int userId);
+    Task<Credito> FindByUserId(int userId);
 
     Task<CreditoResponse> DeleteAsync(int creditId);
 }
