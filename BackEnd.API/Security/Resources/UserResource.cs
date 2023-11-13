@@ -1,3 +1,5 @@
+using BackEnd.API.Credit.Resources;
+
 namespace BackEnd.API.Security.Resources;
 
 public class UserResource

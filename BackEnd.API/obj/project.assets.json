@@ -3396,11 +3396,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Valery\\Backend.API\\BackEnd.API\\BackEnd.API\\BackEnd.API.csproj",
+      "projectUniqueName": "C:\\Users\\Valery\\Backend.API\\Backend.API\\BackEnd.API\\BackEnd.API.csproj",
       "projectName": "BackEnd.API",
-      "projectPath": "C:\\Users\\Valery\\Backend.API\\BackEnd.API\\BackEnd.API\\BackEnd.API.csproj",
+      "projectPath": "C:\\Users\\Valery\\Backend.API\\Backend.API\\BackEnd.API\\BackEnd.API.csproj",
       "packagesPath": "C:\\Users\\Valery\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Valery\\Backend.API\\BackEnd.API\\BackEnd.API\\obj\\",
+      "outputPath": "C:\\Users\\Valery\\Backend.API\\Backend.API\\BackEnd.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Valery\\AppData\\Roaming\\NuGet\\NuGet.Config",

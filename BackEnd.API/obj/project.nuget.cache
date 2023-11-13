@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2a7C8eu8hwn3erVRn3aiEb/BW3BbSBtfA0zhDPzrKr1J8P0eww8LyuLCpNS/+t9FMKNbD7mBdIu4v6h6NVomEg==",
+  "dgSpecHash": "HhVxT+lYWejCuk+yRpgmNmX7DfIqqna7y6dnpwLPUUkIff32qlpwlqp63nhfNsglV6ZhJk3tKR64Yz2Smy8hbQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Valery\\Backend.API\\BackEnd.API\\BackEnd.API\\BackEnd.API.csproj",
+  "projectFilePath": "C:\\Users\\Valery\\Backend.API\\Backend.API\\BackEnd.API\\BackEnd.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Valery\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Valery\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
