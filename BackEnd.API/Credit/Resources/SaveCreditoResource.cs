@@ -6,6 +6,7 @@ public class SaveCreditoResource
 {
     [Required]
     public double PrecioVenta { get; set; }
+    public double CuotaInicial { get; set; }
     [Required]
     public double MontoFinanciar { get; set; }
     [Required]

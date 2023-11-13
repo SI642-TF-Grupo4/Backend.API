@@ -53,6 +53,7 @@ public class AppDbContext : DbContext
         builder.Entity<Credito>().HasKey(c => c.Id);
         builder.Entity<Credito>().Property(c => c.Id).IsRequired().ValueGeneratedOnAdd();
         builder.Entity<Credito>().Property(c => c.PrecioVenta);
+        builder.Entity<Credito>().Property(c => c.CuotaInicial);
         builder.Entity<Credito>().Property(c => c.MontoFinanciar);
         builder.Entity<Credito>().Property(c => c.Plazo);
         builder.Entity<Credito>().Property(c => c.TotalPeriodos);
@@ -91,7 +92,8 @@ public class AppDbContext : DbContext
         builder.Entity<Credito>().HasMany(
                 c => c.PlanDePago
             ).WithOne(c => c.Credito)
-            .HasForeignKey(c => c.CreditoId);
+            .HasForeignKey(c => c.CreditoId)
+            .OnDelete(DeleteBehavior.Cascade);
         
         builder.UseSnakeCaseNamingConvention();
     }
