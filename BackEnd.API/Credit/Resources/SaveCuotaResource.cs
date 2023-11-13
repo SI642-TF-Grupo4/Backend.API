@@ -4,21 +4,23 @@ namespace BackEnd.API.Credit.Resources;
 
 public class SaveCuotaResource
 {
-    public int NCuota;
-    public int TipoPeriodoGracia; // Total, parcial, sin gracia
     [Required]
-    public double SaldoInicial;
-    public double Interes;
-    public double Amortización;
-    public double MontoCuota;
-    [Required]
-    public double SaldoFinal;
-    public double Comision;
-    public double SeguroDesgravamen;
-    public double SeguroVehicular;
-    [Required]
-    public double FlujoDeCaja;
+    public int NCuota { get; set; }
+    public int TipoPeriodoGracia { get; set; } // Total, parcial, sin gracia
     
     [Required]
-    public int CreditoId;
+    public double SaldoInicial { get; set; }
+    public double Interes { get; set; }
+   [Required]
+    public double Amortización { get; set; }
+    public double MontoCuota { get; set; }
+    [Required]
+    public double SaldoFinal { get; set; }
+    public double Comision { get; set; }
+    public double SeguroDesgravamen { get; set; }
+    public double SeguroVehicular { get; set; }
+    [Required]
+    public double FlujoDeCaja { get; set; }
+    [Required]
+    public int CreditoId { get; set; }
 }

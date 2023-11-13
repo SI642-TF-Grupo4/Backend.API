@@ -6,6 +6,8 @@ public class Credito
 {
     public int Id { get; set; }
     public double PrecioVenta { get; set; }
+    
+    public double CuotaInicial { get; set; }
     public double MontoFinanciar { get; set; }
     public int Plazo { get; set; }//en años, la frecuencia de pago es mensual
     //se considera un año 360 dias 
