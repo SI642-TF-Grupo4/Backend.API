@@ -2,17 +2,17 @@ namespace BackEnd.API.Credit.Resources;
 
 public class CuotaResource
 {
-    public int Id;
-    public int NCuota;
-    public int TipoPeriodoGracia; // Total, parcial, sin gracia
-    public double SaldoInicial;
-    public double Interes;
-    public double Amortización;
-    public double MontoCuota;
-    public double SaldoFinal;
-    public double Comision;
-    public double SeguroDesgravamen;
-    public double SeguroVehicular;
-    public double FlujoDeCaja;
-    public CreditoResource Credito;
+    public int Id { get; set; }
+    public int NCuota { get; set; }
+    public int TipoPeriodoGracia { get; set; } // Total, parcial, sin gracia
+    public double SaldoInicial { get; set; }
+    public double Interes { get; set; }
+    public double Amortización { get; set; }
+    public double MontoCuota { get; set; }
+    public double SaldoFinal { get; set; }
+    public double Comision { get; set; }
+    public double SeguroDesgravamen { get; set; }
+    public double SeguroVehicular { get; set; }
+    public double FlujoDeCaja { get; set; }
+    public CreditoResource Credito { get; set; }
 }
