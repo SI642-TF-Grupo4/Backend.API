@@ -10,7 +10,7 @@ public class ResourceToModelProfile : Profile
     public ResourceToModelProfile()
     {
         CreateMap<SaveVehicleResource, Vehicle>();
-
+        CreateMap<SaveEntidadResource, Entidad>();
         CreateMap<SaveCreditoResource, Credito>()
             .ForMember
             (
@@ -35,6 +35,6 @@ public class ResourceToModelProfile : Profile
                 )
             );
 
-        CreateMap<CuotaResource, Cuota>();
+        CreateMap<SaveCuotaResource, Cuota>();
     }
 }

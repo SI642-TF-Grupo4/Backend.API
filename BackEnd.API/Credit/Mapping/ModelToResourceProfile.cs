@@ -13,5 +13,7 @@ public class ModelToResourceProfile : Profile
         CreateMap<Credito, CreditoResource>();
 
         CreateMap<Cuota, CuotaResource>();
+
+        CreateMap<Entidad, EntidadResource>();
     }
 }

@@ -5,7 +5,7 @@ namespace BackEnd.API.Security.Domain.Services;
 
 public interface IUserService
 {
-    Task<AuthenticateResponse> AuthenticateAsync(AuthenticateRequest model);
+    //Task<AuthenticateResponse> AuthenticateAsync(AuthenticateRequest model);
 
     Task<IEnumerable<User>> ListAsync();
 

@@ -10,6 +10,8 @@ public class AppDbContext : DbContext
     public DbSet<User> Users { get; set; }
     public DbSet<Vehicle> Vehicles { get; set; }
     public DbSet<Credito> Creditos { get; set; }
+    
+    public DbSet<Entidad> Entidades { get; set; }
     public DbSet<Cuota> Cuotas { get; set; }
 
     public AppDbContext(DbContextOptions options) : base(options)
@@ -28,7 +30,7 @@ public class AppDbContext : DbContext
         builder.Entity<User>().Property(u => u.Dni).IsRequired().HasMaxLength(9);
         builder.Entity<User>().Property(u => u.Email).IsRequired();
         builder.Entity<User>().Property(u => u.Telefono).IsRequired().HasMaxLength(9);
-        builder.Entity<User>().Property(u => u.PasswordHash).IsRequired();
+        builder.Entity<User>().Property(u => u.Password).IsRequired();
         builder.Entity<User>()
             .HasOne(u => u.Vehicle)
             .WithOne(v => v.User)
@@ -55,9 +57,14 @@ public class AppDbContext : DbContext
         builder.Entity<Credito>().Property(c => c.PrecioVenta);
         builder.Entity<Credito>().Property(c => c.CuotaInicial);
         builder.Entity<Credito>().Property(c => c.MontoFinanciar);
+        builder.Entity<Credito>().Property(c => c.MontoSolicitar);
         builder.Entity<Credito>().Property(c => c.Plazo);
+        builder.Entity<Credito>().Property(c => c.TipoGracia);
         builder.Entity<Credito>().Property(c => c.TotalPeriodos);
+        builder.Entity<Credito>().Property(c => c.TipoTasa);
         builder.Entity<Credito>().Property(c => c.Tea);
+        builder.Entity<Credito>().Property(c => c.Tna);
+        builder.Entity<Credito>().Property(c => c.Tem);
         builder.Entity<Credito>().Property(c => c.Moneda);
         builder.Entity<Credito>().Property(c => c.PeriodosGraciaParcial);
         builder.Entity<Credito>().Property(c => c.PeriodosGraciaTotal);
@@ -68,16 +75,17 @@ public class AppDbContext : DbContext
         builder.Entity<Credito>().Property(c => c.FechaPrimeraCuota);
         builder.Entity<Credito>().Property(c => c.FechaDesembolso);
         builder.Entity<Credito>().Property(c => c.OtrosGastos);
-        builder.Entity<Credito>().Property(c => c.OtrasComisiones);
+        builder.Entity<Credito>().Property(c => c.Comision);
         builder.Entity<Credito>().Property(c => c.Tir);
         builder.Entity<Credito>().Property(c => c.Tcea);
         builder.Entity<Credito>().Property(c => c.CuotaMensual);
         builder.Entity<Credito>().Property(c => c.UltimaCuota);
-
+        
         builder.Entity<Cuota>().ToTable("Cuotas");
         builder.Entity<Cuota>().HasKey(c => c.Id);
         builder.Entity<Cuota>().Property(c => c.Id).IsRequired().ValueGeneratedOnAdd();
         builder.Entity<Cuota>().Property(c => c.NCuota);
+        builder.Entity<Cuota>().Property(c => c.Fecha);
         builder.Entity<Cuota>().Property(c => c.TipoPeriodoGracia);
         builder.Entity<Cuota>().Property(c => c.SaldoInicial);
         builder.Entity<Cuota>().Property(c => c.Interes);
@@ -94,6 +102,16 @@ public class AppDbContext : DbContext
             ).WithOne(c => c.Credito)
             .HasForeignKey(c => c.CreditoId)
             .OnDelete(DeleteBehavior.Cascade);
+
+        builder.Entity<Entidad>().ToTable("Entidades");
+        builder.Entity<Entidad>().Property(e => e.Id);
+        builder.Entity<Entidad>().Property(e => e.Id).IsRequired().ValueGeneratedOnAdd();
+        builder.Entity<Entidad>().Property(e => e.Name);
+        builder.Entity<Entidad>().Property(e => e.Comision);
+        builder.Entity<Entidad>().Property(e => e.SeguroDeg);
+        builder.Entity<Entidad>().Property(e => e.SeguroVehi);
+        builder.Entity<Entidad>().Property(e => e.TasaMin);
+        builder.Entity<Entidad>().Property(e => e.TasaMax);
         
         builder.UseSnakeCaseNamingConvention();
     }

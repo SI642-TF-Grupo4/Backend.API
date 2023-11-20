@@ -12,31 +12,16 @@ namespace BackEnd.API.Security.Services;
 public class UserService : IUserService
 {
     private readonly IUserRepository _userRepository;
-    private readonly IPasswordHashingService _passwordHashingService;
+    //private readonly IPasswordHashingService _passwordHashingService;
     private readonly IUnitOfWork _unitOfWork;
-    private readonly IJwtHandler _jwtHandler;
     private readonly IMapper _mapper;
 
 
-    public UserService(IUserRepository userRepository, IPasswordHashingService passwordHashingService, IUnitOfWork unitOfWork, IJwtHandler jwtHandler, IMapper mapper)
+    public UserService(IUserRepository userRepository, IUnitOfWork unitOfWork, IMapper mapper)
     {
         _userRepository = userRepository;
-        _passwordHashingService = passwordHashingService;
         _unitOfWork = unitOfWork;
-        _jwtHandler = jwtHandler;
         _mapper = mapper;
-    }
-
-    public async Task<AuthenticateResponse> AuthenticateAsync(AuthenticateRequest model)
-    {
-        var user = await _userRepository.FindByEmailAsync(model.Email);
-        if (user == null || !_passwordHashingService.VerifyPassword(model.Password, user.PasswordHash))
-            throw new AppException("Email y/o password incorrect");
-
-        var response = _mapper.Map<AuthenticateResponse>(user);
-        response.Token = _jwtHandler.GenerateToken(user);
-        
-        return response;
     }
 
     public async Task<IEnumerable<User>> ListAsync()
@@ -61,7 +46,7 @@ public class UserService : IUserService
             throw new AppException("Email is already taken");
 
         var user = _mapper.Map<User>(model);
-        user.PasswordHash = _passwordHashingService.GetHash(model.Password);
+        //user.PasswordHash = _passwordHashingService.GetHash(model.Password);
         
         try
         {

@@ -4,6 +4,8 @@ public class Cuota
 {
     public int Id { get; set; }
     public int NCuota { get; set; }
+    
+    public string Fecha { get; set; }
     public int TipoPeriodoGracia { get; set; } // Total, parcial, sin gracia
     public double SaldoInicial { get; set; }
     public double Interes { get; set; }

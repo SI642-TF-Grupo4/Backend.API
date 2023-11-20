@@ -9,7 +9,7 @@ public class AuthorizeAttribute : Attribute, IAuthorizationFilter
 {
     public void OnAuthorization(AuthorizationFilterContext context)
     {
-        var allowAnonymous = context
+        /*var allowAnonymous = context
             .ActionDescriptor
             .EndpointMetadata
             .OfType<AllowAnonymousAttribute>()
@@ -22,6 +22,6 @@ public class AuthorizeAttribute : Attribute, IAuthorizationFilter
             context.Result = new JsonResult(new { message = "Unauthorized" })
             {
                 StatusCode = StatusCodes.Status401Unauthorized
-            };
+            };*/
     }
 }

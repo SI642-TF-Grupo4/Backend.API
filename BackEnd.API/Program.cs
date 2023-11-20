@@ -2,8 +2,6 @@ using BackEnd.API.Credit.Domain.Repositories;
 using BackEnd.API.Credit.Domain.Services;
 using BackEnd.API.Credit.Persistence.Repositories;
 using BackEnd.API.Credit.Services;
-using BackEnd.API.Security.Authorization.Handlers.Implementations;
-using BackEnd.API.Security.Authorization.Handlers.Interfaces;
 using BackEnd.API.Security.Authorization.Settings;
 using BackEnd.API.Security.Domain.Repositories;
 using BackEnd.API.Security.Domain.Services;
@@ -63,19 +61,21 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 
 // Authentication Bounded Context Injection Configuration
-builder.Services.AddScoped<IJwtHandler, JwtHandler>();
+//builder.Services.AddScoped<IJwtHandler, JwtHandler>();
 
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IVehicleService, VehicleService>();
 builder.Services.AddScoped<ICreditoService, CreditService>();
 builder.Services.AddScoped<ICuotaService, CuotaService>();
+builder.Services.AddScoped<IEntidadService, EntidadService>();
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ICreditRepository, CreditRepository>();
 builder.Services.AddScoped<IVehicleRepository, VehicleRepository>();
 builder.Services.AddScoped<ICuotaRepository, CuotaRepository>();
+builder.Services.AddScoped<IEntidadRepository, EntidadRepository>();
 
-builder.Services.AddScoped<IPasswordHashingService, PasswordHashingService>();
+//builder.Services.AddScoped<IPasswordHashingService, PasswordHashingService>();
 
 // AutoMapper Configuration
 builder.Services.AddAutoMapper(

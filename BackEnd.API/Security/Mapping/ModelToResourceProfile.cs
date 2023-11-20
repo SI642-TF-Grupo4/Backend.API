@@ -8,7 +8,7 @@ public class ModelToResourceProfile : AutoMapper.Profile
 {
     public ModelToResourceProfile()
     {
-        CreateMap<User, AuthenticateResponse>();
+       // CreateMap<User, AuthenticateResponse>();
         CreateMap<User, UserResource>();
     }
 }

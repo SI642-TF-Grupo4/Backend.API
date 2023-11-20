@@ -11,8 +11,8 @@ public class RegisterRequest
     public string Apellido { get; set; }
     
     [Required]
-    [MinLength(9, ErrorMessage = "DNI can only have 9 digits.")]
-    [MaxLength(9, ErrorMessage = "DNI can only have 9 digits.")]
+    [MinLength(8, ErrorMessage = "DNI can only have 8 digits.")]
+    [MaxLength(8, ErrorMessage = "DNI can only have 8 digits.")]
     public string Dni { get; set; }
     
     [Required]

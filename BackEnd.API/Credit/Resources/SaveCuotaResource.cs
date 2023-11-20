@@ -7,7 +7,7 @@ public class SaveCuotaResource
     [Required]
     public int NCuota { get; set; }
     public int TipoPeriodoGracia { get; set; } // Total, parcial, sin gracia
-    
+    public string Fecha { get; set; }
     [Required]
     public double SaldoInicial { get; set; }
     public double Interes { get; set; }

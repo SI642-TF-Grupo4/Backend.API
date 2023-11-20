@@ -25,14 +25,6 @@ public class UsersController : ControllerBase
         _mapper = mapper;
     }
 
-    [AllowAnonymous]
-    [HttpPost("sign-in")]
-    public async Task<IActionResult> Authenticate(AuthenticateRequest request)
-    {
-        var response = await _userService.AuthenticateAsync(request);
-        return Ok(response);
-    }
-    
     [HttpPost("sign-up")]
     public async Task<IActionResult> Register(RegisterRequest request)
     {
